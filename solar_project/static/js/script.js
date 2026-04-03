@@ -1,44 +1,58 @@
 /**
- * Render a line chart of efficiency over time using Chart.js.
+ * Render a polar area chart of efficiency readings using Chart.js.
  *
  * @param {string} canvasId - ID of canvas element.
- * @param {string[]} labels - X-axis labels (timestamps).
- * @param {number[]} values - Y-axis values (efficiency percentages).
+ * @param {string[]} labels - Labels (timestamps).
+ * @param {number[]} values - Efficiency percentages.
  */
-function renderEfficiencyChart(canvasId, labels, values) {
+function renderEfficiencyPolarChart(canvasId, labels, values) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
 
     new Chart(canvas, {
-        type: 'line',
+        type: 'polarArea',
         data: {
             labels: labels,
             datasets: [{
                 label: 'Efficiency (%)',
                 data: values,
-                borderColor: '#198754',
-                backgroundColor: 'rgba(25, 135, 84, 0.15)',
-                tension: 0.3,
-                fill: true,
-                pointRadius: 3
+                backgroundColor: [
+                    'rgba(25, 135, 84, 0.25)',
+                    'rgba(13, 110, 253, 0.25)',
+                    'rgba(255, 193, 7, 0.25)',
+                    'rgba(220, 53, 69, 0.25)',
+                    'rgba(111, 66, 193, 0.25)',
+                    'rgba(32, 201, 151, 0.25)'
+                ],
+                borderColor: [
+                    'rgba(25, 135, 84, 0.85)',
+                    'rgba(13, 110, 253, 0.85)',
+                    'rgba(255, 193, 7, 0.85)',
+                    'rgba(220, 53, 69, 0.85)',
+                    'rgba(111, 66, 193, 0.85)',
+                    'rgba(32, 201, 151, 0.85)'
+                ],
+                borderWidth: 1
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Efficiency (%)'
-                    }
+            plugins: {
+                legend: {
+                    position: 'right'
                 },
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Timestamp'
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            return `Efficiency: ${context.raw}%`;
+                        }
                     }
+                }
+            },
+            scales: {
+                r: {
+                    beginAtZero: true
                 }
             }
         }

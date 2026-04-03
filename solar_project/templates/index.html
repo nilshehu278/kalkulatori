@@ -47,7 +47,7 @@
 
 <div class="card shadow-sm">
     <div class="card-body">
-        <h5 class="card-title">Efficiency Over Time</h5>
+        <h5 class="card-title">Efficiency Polar Chart</h5>
         <canvas id="efficiencyChart" height="90"></canvas>
     </div>
 </div>
@@ -58,6 +58,6 @@
     // Chart data injected from Flask as JSON strings.
     const chartLabels = {{ chart_labels | safe }};
     const chartValues = {{ chart_values | safe }};
-    renderEfficiencyChart('efficiencyChart', chartLabels, chartValues);
+    renderEfficiencyPolarChart('efficiencyChart', chartLabels, chartValues);
 </script>
 {% endblock %}
