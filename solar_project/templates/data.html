@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h3 mb-0">All Solar Data</h1>
+    <a href="{{ url_for('add_data') }}" class="btn btn-outline-success">Add Reading</a>
+</div>
+
+<div class="table-responsive shadow-sm rounded">
+    <table class="table table-striped table-hover align-middle mb-0">
+        <thead class="table-success">
+            <tr>
+                <th>ID</th>
+                <th>Timestamp</th>
+                <th>Voltage (V)</th>
+                <th>Current (A)</th>
+                <th>Power (W)</th>
+                <th>Efficiency (%)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record.id }}</td>
+                <td>{{ record.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                <td>{{ '%.2f'|format(record.voltage) }}</td>
+                <td>{{ '%.2f'|format(record.current) }}</td>
+                <td>{{ '%.2f'|format(record.power) }}</td>
+                <td>{{ '%.2f'|format(record.efficiency) }}</td>
+                <td>
+                    <form method="POST" action="{{ url_for('delete_data', record_id=record.id) }}" onsubmit="return confirm('Delete this record?');">
+                        <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="7" class="text-center py-4">No records found. Add your first reading!</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
