@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\toxic\\OneDrive\\Desktop\\kalkulatori\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8A743AC9-0900-42C2-BD44-1FE8A4F8D2FE}|CalculatorApp\\CalculatorApp.csproj|c:\\users\\toxic\\onedrive\\desktop\\kalkulatori\\calculatorapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A743AC9-0900-42C2-BD44-1FE8A4F8D2FE}|CalculatorApp\\CalculatorApp.csproj|solutionrelative:calculatorapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\toxic\\OneDrive\\Desktop\\kalkulatori\\CalculatorApp\\Form1.cs",
+              "RelativeDocumentMoniker": "CalculatorApp\\Form1.cs",
+              "ToolTip": "C:\\Users\\toxic\\OneDrive\\Desktop\\kalkulatori\\CalculatorApp\\Form1.cs*",
+              "RelativeToolTip": "CalculatorApp\\Form1.cs*",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAiwGYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T07:11:44.488Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

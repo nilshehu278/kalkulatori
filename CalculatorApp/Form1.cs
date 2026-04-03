@@ -100,7 +100,6 @@ public partial class Form1 : Form
                 _engine.InputDecimalPoint();
                 break;
             case Keys.Enter:
-            case Keys.Return:
                 TryEvaluate();
                 e.Handled = true;
                 return;
