@@ -1,11 +1,20 @@
-namespace CalculatorApp;
+using System;
+using System.Windows.Forms;
+using CalculatorApp.Data;
+using CalculatorApp.Forms;
 
-internal static class Program
+namespace CalculatorApp
 {
-    [STAThread]
-    private static void Main()
+    internal static class Program
     {
-        ApplicationConfiguration.Initialize();
-        Application.Run(new Form1());
+        [STAThread]
+        private static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            DatabaseInitializer.Initialize();
+            Application.Run(new MainMenuForm());
+        }
     }
 }
