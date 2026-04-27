@@ -56,8 +56,8 @@
 {% block scripts %}
 <script>
     // Chart data injected from Flask as JSON strings.
-    const chartLabels = {{ chart_labels | safe }};
-    const chartValues = {{ chart_values | safe }};
+    const chartLabels = {{ chart_labels | tojson }};
+    const chartValues = {{ chart_values | tojson }};
     renderEfficiencyPolarChart('efficiencyChart', chartLabels, chartValues);
 </script>
 {% endblock %}
